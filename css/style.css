@@ -1,0 +1,82 @@
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+   text-align: center;
+    border: 2px black solid;
+    background-color: #B2EBF2;
+}
+.contenu {
+    width: 100%;
+    border: 2px black solid;
+}
+.cameraDetail {  
+  border: 2px green solid;
+}
+.choixOptions {    
+    width: 200px;
+    border: 1px blue solid;  
+   margin: auto;
+}
+.choixCouleur, .choixNbProduits {
+    margin-bottom: 30px;
+}
+#boutonPanier, #boutonAjouter, #boutonAccueil {
+    height: 30px;
+}
+.cameraPanier {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px red solid;
+    text-align: left;
+} 
+img {  
+  border: 1px blue solid;
+}
+
+#listeProduits {
+    border: 2px red solid;  
+}
+.produit {
+    margin: auto;
+}
+label {
+display: flex;
+flex-direction: column;
+}
+.contenu-panier {
+    border: 2px red solid;
+}
+.productcart {
+    border: blue 2px solid;
+}
+.libelle {
+    display: flex;
+    flex-direction: row;
+  justify-content: flex-start;
+    border: 2px green solid;
+}
+h2, p {
+    margin: 0;
+}
+.libelle-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    border: 5px orange solid;
+}
+.productimage {
+    border: 2px red solid;
+    width: 150px;
+    height: 100px; 
+}
+.nameModele {
+    display: flex;
+    flex-direction: column;
+    border: 2px blue solid;
+}
+.lensesModele, .descriptionModele, .priceModele {
+    margin: 0 20px;
+}
