@@ -23,8 +23,8 @@
               `<a href="produit.html?id=${camera._id}"><article class="produitCamera">
                 <img class="imageCamera" width= "400"  src="${camera.imageUrl}" alt="photo de la caméra" >
                   <div class="intitule">
-                    <h2>${camera.name}</h2>
-                    <p>${camera.price}</p>
+                    <h2>Modèle: ${camera.name}</h2>
+                    <p>Prix: ${camera.price/100}€</p>
                   </div></a>`;      
                 })
        })   

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orinoco entreprise de commerce en ligne ">
+    <meta name="description" content="Orinoco entreprise de commerce en ligne propose un decriptif détaillé de la caméra">
     <meta name="robots" content="index, follow" >
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
@@ -12,17 +12,36 @@
 <body>
     <div class="container">
         <header>
-            <button onclick="window.location.href='index.html'" type="button" id="boutonAccueil">Accueil</button>
+            <div id="logo">
+                <img src="../images/logo2.png" alt="logo">
+            </div>
             <h1>Produits Orinoco</h1>
+            <nav class="navbar row">
+                <div class="navbar">
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="panier.html">Panier</a>
+                        </li>
+                        <li>
+                            <a href="index.html">Accueil</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>            
         </header>
         <main class="contenu-produit">
         <h2>Description produit</h2>
            <div id="description">
-               <div class="boutonPanier">
-              
-                <button onclick="window.location.href='panier.html'" type="button" id="boutonPanier">Panier</button>
+           </div>
+            <div class="choixObjectifs">
+                <h3>Options</h3>
+               <label for="choix-objectifs">Choisissez un type d'objectif</label>
+                   <select name="lentille" id="choix-objectifs">
+                       <option>Choisissez un objectif</option>
+                   </select>
+            </div>
+            <div class="boutonPanier">             
                 <button type="button" id="boutonAjouter">Ajouter au panier</button>     
-                </div>    
             </div>
         </main>
         <footer>

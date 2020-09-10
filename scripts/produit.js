@@ -22,27 +22,22 @@ getProduitsCamera()
     descriptionProduit.innerHTML +=
        `<div class="cameraDetail">
             <img class="imageProduit" width= "800" src="${data.imageUrl}" alt="photo du produit">
-              <h3 class="cameraNameProduit">${data.name}</h3>
-                <p><strong>Prix: ${data.price}€</strong></p>
-                <p>Objectif(s): ${data.lenses}</p>
-                <p>Description: ${data.description}</p>         
-              
-               <div class="choixOptions">
-                  <h3>Options<h3>
-                   <div class="choixCouleur">
-                  <label for="choix-couleur">Choisissez un type de lentilles</label>
-                    <select name="couleur" id="choix-couleur">
-                        <option value="">Choisissez un type de lentilles</option>
-                        <option value="noir">Noir</option>
-                        <option value="blanc">Blanc</option>
-                        <option value="marron">Marron</option>                     
-                    </select>
-                    </div>
-                    <div class="choixNbProduits">
-               
-                        </div> 
-                </div>      
-        </div>`;  
+              <h3 class="cameraNameProduit">Modèle: ${data.name}</h3>
+                <p><strong>Prix: ${data.price/100}€</strong></p>
+                <p>Description: ${data.description}</p>             
+              <div class="choixOptions"></div>
+                <div class="choixNbProduits">       
+                </div>
+              </div>      
+        </div>`; 
+       const select = document.getElementById("choix-objectifs");
+
+      for(let i = 0; i < data.lenses.length; i++) {
+          var opt = data.lenses[i];
+          select.innerHTML += 
+          "<option value=\"" + opt + "\">" + opt + "</option>" ;  
+          }              
+
     const ajouterProduit = document.getElementById('boutonAjouter');
     ajouterProduit.addEventListener('click', function(event) {
       //On crée l'objet cameraProduit
@@ -50,7 +45,7 @@ getProduitsCamera()
         id: data._id,
         nom: data.name,
         image: data.imageUrl,
-        prix: data.price,
+        prix: data.price/100,
         description: data.description,
         lentilles: data.lenses,
       };
