@@ -3,26 +3,47 @@
     max-width: 1400px;
     margin: auto;
    text-align: center;
-    border: 2px black solid;
-    background-color: #B2EBF2;
+  /*  border: 2px black solid;*/
+   background-color: #F3E9F1;
 }
 .contenu {
     width: 100%;
-    border: 2px black solid;
+  /*  border: 2px black solid;*/
 }
 .cameraDetail {  
-  border: 2px green solid;
+ /* border: 2px green solid;*/
 }
 .choixOptions {    
     width: 200px;
-    border: 1px blue solid;  
+   /* border: 1px blue solid;  */
    margin: auto;
 }
-.choixCouleur, .choixNbProduits {
+.choixObjectifs {
+    margin-bottom: 80px;
+}
+header {
+   /* border: 2px black solid;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 30px;
 }
-#boutonPanier, #boutonAjouter, #boutonAccueil {
-    height: 30px;
+nav a {
+    font-size: 1.3em;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+nav li {
+    margin-right: 15px;
+}
+.produitCamera {
+    margin-bottom: 80px;
 }
 .cameraPanier {
     display: flex;
@@ -32,11 +53,11 @@
     text-align: left;
 } 
 img {  
-  border: 1px blue solid;
+ /* border: 1px blue solid;*/
 }
 
 #listeProduits {
-    border: 2px red solid;  
+  /* border: 2px red solid;  */
 }
 .produit {
     margin: auto;
@@ -58,7 +79,7 @@ flex-direction: column;
     border: 2px green solid;
 }
 h2, p {
-    margin: 0;
+/*  margin: 0;*/
 }
 .libelle-name {
     display: flex;
