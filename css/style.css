@@ -69,7 +69,7 @@ flex-direction: column;
 .contenu-panier {
     border: 2px red solid;
 }
-.productcart {
+.carteProduit {
     border: blue 2px solid;
 }
 .libelle {
@@ -81,23 +81,26 @@ flex-direction: column;
 h2, p {
 /*  margin: 0;*/
 }
-.libelle-name {
+.libelle-nom {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: left;
     border: 5px orange solid;
 }
-.productimage {
+.imagePanier {
     border: 2px red solid;
     width: 150px;
     height: 100px; 
 }
-.nameModele {
+.nomModele {
     display: flex;
     flex-direction: column;
     border: 2px blue solid;
 }
-.lensesModele, .descriptionModele, .priceModele {
+.lentillesModele, .descriptionModele, .prixModele {
     margin: 0 20px;
+}
+#prix-total{
+    text-align: right;
 }

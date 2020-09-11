@@ -26,9 +26,10 @@ getProduitsCamera()
                 <p><strong>Prix: ${data.price/100}€</strong></p>
                 <p>Description: ${data.description}</p>             
               <div class="choixOptions"></div>
-                <div class="choixNbProduits">       
-                </div>
-              </div>      
+              <div class="choixNbProduits">
+                <label for="nbProduits">Nombre de caméra(s)</label>
+                <input type="number" id="nbProduits" name="nbProduits" min="1" max="10">   
+              </div>
         </div>`; 
        const select = document.getElementById("choix-objectifs");
 
@@ -38,8 +39,10 @@ getProduitsCamera()
           "<option value=\"" + opt + "\">" + opt + "</option>" ;  
           }              
 
-    const ajouterProduit = document.getElementById('boutonAjouter');
-    ajouterProduit.addEventListener('click', function(event) {
+      const ajouterProduit = document.getElementById('boutonAjouter');
+      ajouterProduit.addEventListener('click', function(event) {
+      //Récupération de la valeur rentrée dans l'input
+      var quantity = document.getElementById("nbProduits").value;
       //On crée l'objet cameraProduit
       let cameraProduit = {
         id: data._id,
@@ -48,28 +51,33 @@ getProduitsCamera()
         prix: data.price/100,
         description: data.description,
         lentilles: data.lenses,
+        quantite: quantity,
       };
       console.log(cameraProduit); 
-       if(typeof localStorage!='undefined') {             
+            //Détection du support de localStorage
+       if(typeof localStorage!='undefined') {         
+            //Récupération des données du localStorage    
             const monobjet_json = localStorage.getItem('produit');
             let produit;
+            //On vérifie si on a des donées dans le localStorage
             if(monobjet_json!=null) {
               window.alert("Produit ajouté au panier");
-                //renvoie sous forme d'objet
+              //renvoie sous forme d'objet
               produit = JSON.parse(monobjet_json);
               console.log(produit);
             } else {
               window.alert("Premier ajout au panier");
+              //On initialise sous forme de tableau
               produit = [];
-             console.log(produit);
+              console.log(produit);
             }            
-             produit.push(cameraProduit);
-             console.log("localStorage: " + produit);
-              //on insère le produit et ontransforme en chaine de texte            
+            produit.push(cameraProduit);
+            console.log("localStorage: " + produit);
+            //on transforme en chaine de texte et on stock dans localStorage         
             localStorage.setItem('produit', JSON.stringify(produit));
-            console.log("stringify " + produit ); 
+            console.log("stringify: " + produit); 
           } else {
-            window.alert("localStorage n'est pas supporté");
+              window.alert("localStorage n'est pas supporté");
           }
   })               
 })
