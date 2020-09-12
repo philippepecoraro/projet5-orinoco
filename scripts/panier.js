@@ -11,7 +11,7 @@ const produitPanier = document.getElementById("contenu-donnees");
               <div class="descriptionModele"><p>Description: ${panier.description}</p></div>
               <div class="prixModele"><p>Prix: ${panier.prix}€</p></div>
               <div class="quantiteModele"><p>Quantité: ${panier.quantite}</p></div>
-              <div class="prixTotal"><p>Prix total du modèle: ${panier.prix * panier.quantite}€</p></div>
+              <div class="prixTotal"><p>Prix total modèle(s) par quantité: <br/>${panier.prix * panier.quantite}€</p></div>
             </div>                            
           </div>          
       </article> `;
@@ -22,8 +22,8 @@ const produitPanier = document.getElementById("contenu-donnees");
       .reduce((accumulateur, values) => accumulateur + (values.prix)*(values.quantite), 0);
       console.log(reduced);
       console.log(typeof reduced);
-      const finalCheck = document.getElementById('prix-total');
-      finalCheck.innerHTML =  'Prix total:' + reduced + '€';
+      const finalCheck = document.getElementById('prix-total-final');
+      finalCheck.innerHTML =  'Prix total final:' + reduced + '€';
 }  
  //Mise à zéro du panier
   let init = document.getElementById('boutonInit');
