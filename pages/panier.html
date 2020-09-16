@@ -31,6 +31,34 @@
             <h2>Votre Panier</h2>
                 <div id="contenu-donnees"></div>
                 <div id="prix-total-final"></div>
+            <section id="formulaire">
+                <h3>Formulaire</h3>
+                <form id="formulaire">
+                    <div class="prenom">
+                        <label for="prenom">Prénom: </label>
+                        <input name="prenom" id="prenom" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
+                    </div>
+                    <div class="nom">
+                        <label for="nom">Nom: </label>
+                        <input name="nom" id="nom" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
+                    </div>
+                    <div class="adresse">
+                        <label for="adresse">Adresse: </label>
+                        <input name="adresse" id="adresse" type="text" pattern="[A-Za-z0-9- éè]{1,40}" required>
+                    </div>
+                    <div class="ville">
+                        <label for="ville">Ville: </label>
+                        <input name="ville" id="ville" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Entrez votre email: </label>
+                        <input name="email" id="email" type="email" required>
+                    </div>
+                    <div class="boutonValidation">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </section>
         </main>
         <footer>
             <button id="boutonInit">Init panier</button>          
