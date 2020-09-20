@@ -1,69 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orinoco entreprise de commerce en ligne-page panier récapitulative">
-    <meta name="robots" content="index, follow" >
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Panier</title>
-</head>
-<body>
-    <div class="container container-panier">
-        <header>
-            <div id="logo">
-                <img src="../images/logo.png" alt="logo">
-            </div>
-            <h1>Produits Orinoco</h1>
-            <nav class="navbar row">
-                <div class="navbar">
-                    <ul class="navbar-nav">                        
-                        <li>
-                            <a href="index.html">Accueil</a>
-                        </li>
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Orinoco entreprise de commerce en ligne-page panier récapitulative">
+        <meta name="robots" content="index, follow" >
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <title>Panier</title>
+    </head>
+    <body>
+        <div class="container container-panier">
+            <header>
+                <div id="logo">
+                    <img src="../images/logo.png" alt="logo">
                 </div>
-            </nav> 
-        </header>
-        <main class="contenu-panier">
-            <h2>Votre Panier</h2>
-                <div id="contenu-donnees"></div>
-                <div id="prix-total-final"></div>
-            <section id="formulaire">
-                <h3>Formulaire</h3>
-                <form id="formulaire">
-                    <div class="prenom">
-                        <label for="prenom">Prénom: </label>
-                        <input name="prenom" id="prenom" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
+                <h1>Produits Orinoco</h1>
+                <nav class="navbar row">
+                    <div class="navbar">
+                        <ul class="navbar-nav">                        
+                            <li>
+                                <a href="index.html">Accueil</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="nom">
-                        <label for="nom">Nom: </label>
-                        <input name="nom" id="nom" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
-                    </div>
-                    <div class="adresse">
-                        <label for="adresse">Adresse: </label>
-                        <input name="adresse" id="adresse" type="text" pattern="[A-Za-z0-9- éè]{1,40}" required>
-                    </div>
-                    <div class="ville">
-                        <label for="ville">Ville: </label>
-                        <input name="ville" id="ville" type="text" pattern="[A-Za-z-éè]{1,25}" title="Veuillez entrez des lettres et pas des nombres" required>
-                    </div>
-                    <div class="email">
-                        <label for="email">Entrez votre email: </label>
-                        <input name="email" id="email" type="email" required>
-                    </div>
-                    <div class="boutonValidation">
-                        <input type="submit" value="Envoyer">
-                    </div>
-                </form>
-            </section>
-        </main>
-        <footer>
-            <button id="boutonInit">Init panier</button>          
-        </footer>
-    </div>
-    <script src="../scripts/panier.js"></script>
-</body>
+                </nav> 
+            </header>
+            <main class="contenu-panier">
+                <h2>Votre Panier</h2>
+                    <div id="contenu-donnees"></div>
+                    <div id="prix-total-final"></div>
+                    <section id="formulaire">
+                    </section>
+            </main>
+            <footer>
+            </footer>
+        </div>
+        <script src="../scripts/panier.js"></script>
+    </body>
 </html>

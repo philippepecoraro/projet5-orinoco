@@ -43,6 +43,10 @@ getProduitsCamera()
       ajouterProduit.addEventListener('click', function(event) {
       //Récupération de la valeur rentrée dans l'input
       var quantity = document.getElementById("nbProduits").value;
+      //Vérification nombre de caméras entre 1 et 10
+      if(quantity > 0 && quantity <= 10) {
+        console.log(quantity);
+        console.log(typeof quantity);
       //On crée l'objet cameraProduit
       let cameraProduit = {
         id: data._id,
@@ -54,9 +58,9 @@ getProduitsCamera()
         quantite: quantity,
       };
       console.log(cameraProduit); 
-            //Détection du support de localStorage
-       if(typeof localStorage!='undefined') {         
-            //Récupération des données du localStorage    
+       //Détection du support de localStorage
+       if(typeof localStorage!='undefined') {    
+          //Récupération des données du localStorage
             const monobjet_json = localStorage.getItem('produit');
             let produit;
             //On vérifie si on a des donées dans le localStorage
@@ -72,12 +76,14 @@ getProduitsCamera()
               console.log(produit);
             }            
             produit.push(cameraProduit);
-            console.log("localStorage: " + produit);
             //on transforme en chaine de texte et on stock dans localStorage         
             localStorage.setItem('produit', JSON.stringify(produit));
             console.log("stringify: " + produit); 
           } else {
               window.alert("localStorage n'est pas supporté");
           }
+        } else {
+          window.alert("Choisissez une valeur entre 1 et 10")
+        }
   })               
 })
