@@ -23,8 +23,8 @@ getProduitsCamera()
        `<div class="cameraDetail">
             <img class="imageProduit" width= "800" src="${data.imageUrl}" alt="photo du produit">
               <h3 class="cameraNameProduit">Modèle: ${data.name}</h3>
-                <p><strong>Prix: ${data.price/100}€</strong></p>
-                <p>Description: ${data.description}</p>             
+              <div class="prix"><p><strong>Prix: ${data.price/100}€</strong></p></div>
+              <div class="description"><p>Description: ${data.description}</p></div>             
               <div class="choixOptions"></div>
               <div class="choixNbProduits">
                 <label for="nbProduits">Nombre de caméra(s)</label>

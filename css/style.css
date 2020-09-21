@@ -18,10 +18,10 @@
 }
 header {
     font-family: 'roboto', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     margin-bottom: 30px;
+}
+#logo {
+    text-align: left;
 }
 nav a {
     font-size: 1.3em;
@@ -40,11 +40,17 @@ nav ul {
 nav li {
     margin-right: 15px;
 }
+#listeProduits {
+    padding: 20px 0;
+}
 .produitCamera {
     margin-bottom: 80px;
 }
 .produit {
     margin: auto;
+}
+.imageCamera, .imageProduit {
+    box-shadow: 5px 5px 3px black;
 }
 label {
 display: flex;
@@ -57,13 +63,21 @@ flex-direction: column;
     justify-content: space-around;
     text-align: left;
 }
+.cameraDetail {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .libelle {
     display: flex;
     flex-direction: row;
   justify-content: flex-start; 
 }
+.description {
+    margin: 20px 0;
+}
 h1 {
     font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
 }
 h2, p {
   margin: 0;
@@ -73,10 +87,12 @@ h2, p {
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    margin-left: 10px;
 }
 .imagePanier {
     width: 200px;
-    height: 150px; 
+    height: 150px;
+    box-shadow: 2px 2px 3px black;
 }
 .nomModele {
     display: flex;
@@ -87,9 +103,12 @@ h2, p {
 }
 #prix-total-final{
     font-size: 1.5rem;
-    text-align: center;
-    background-color: cadetblue;
+    text-align: left;
+    background-color: #E3CCDF;
     font-weight: bold;
+    width: 180px;
+    margin-left: 210px;
+    border-radius: 8px;
 }
 #boutonInit {
     height: 40px;
@@ -106,4 +125,7 @@ h2, p {
 }
 .remerciements {
     font-size: 1.4rem;
+}
+.boutonPanier {
+    padding-bottom: 20px;
 }

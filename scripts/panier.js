@@ -21,7 +21,7 @@ const reduced = contenuPanier.reduce((accumulateur, values) => accumulateur + (v
 console.log(reduced);
 console.log(typeof reduced);
 const finalCheck = document.getElementById('prix-total-final');
-finalCheck.innerHTML = `<p>Prix total final: ${reduced}€</p>`;
+finalCheck.innerHTML = `<p>Prix total final:<br/> ${reduced}€</p>`;
 const formul = document.getElementById('formulaire');
     formul.innerHTML = `
       <h3>Formulaire de contact</h3>
@@ -52,8 +52,6 @@ const formul = document.getElementById('formulaire');
                 </form>  
                 <button id="boutonInit">Init panier</button>
                 `;
-
-         
 //On récupère les données du formulaire lors du click sur le bouton
 const ajouterContact = document.getElementById('formulaire');
 ajouterContact.addEventListener('submit', function(event) {
