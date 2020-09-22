@@ -6,6 +6,9 @@
     background-color: #F3E9F1;
     font-family: 'Open Sans', sans-serif;
 }
+body {
+    margin: 0;
+}
 .contenu {
     width: 100%;
 }
@@ -22,6 +25,7 @@ header {
 }
 #logo {
     text-align: left;
+    margin-left: 10px;
 }
 nav a {
     font-size: 1.3em;
@@ -39,6 +43,13 @@ nav ul {
 }
 nav li {
     margin-right: 15px;
+}
+article a {
+    color: black;
+    text-decoration: none;
+}
+article a:hover {
+    text-decoration: underline;
 }
 #listeProduits {
     padding: 20px 0;
@@ -82,6 +93,15 @@ h1 {
 h2, p {
   margin: 0;
 }
+h2 {
+    font-size: 1.6em;
+}
+.intitule h2 {
+    font-size: 1.4em;
+}
+.nomModele h2 {
+    font-size: 1.4em;
+}
 .libelle-nom {
     display: flex;
     flex-direction: column;
@@ -92,6 +112,7 @@ h2, p {
 .imagePanier {
     width: 200px;
     height: 150px;
+    margin-left: 10px;
     box-shadow: 2px 2px 3px black;
 }
 .nomModele {
@@ -117,7 +138,7 @@ h2, p {
 }
 .recapitulatif {
     text-align: left;
-    margin: 30px auto;
+    margin: 30px 10px;
     border: 2px black solid
 }
 .cout {
@@ -129,3 +150,83 @@ h2, p {
 .boutonPanier {
     padding-bottom: 20px;
 }
+@media screen and (max-width: 800px) {
+    .imageLogo {
+        height: 50px;
+        width: 120px;
+    }
+}
+@media screen and (max-width: 800px) {
+    nav a {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 800px) {
+    .imageProduit {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .imageProduit, .imageCamera {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .libelle {        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       text-align: center;      
+    }
+}
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 1.8em;
+    }
+}
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 1.3em;
+    }
+}
+@media screen and (max-width: 800px) {
+    .intitule h2 {
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 800px) {
+    .nomModele h2 {
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 800px) {
+    #prix-total-final p {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .libelle-nom {
+        text-align: center;
+    }
+}   
+@media screen and (max-width: 800px) {
+    .imagePanier {
+        margin: auto;
+    }
+} 
+@media screen and (max-width: 800px) {
+    .prixTotal {
+        text-align: center;
+    }
+}  
+@media screen and (max-width: 800px) {
+    #prix-total-final  {
+        text-align: center;
+        margin: auto;
+    }
+} 
+@media screen and (max-width: 800px) {
+    .recapitulatif {
+        text-align: center;
+    }
+}           
