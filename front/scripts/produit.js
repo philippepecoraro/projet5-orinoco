@@ -1,17 +1,16 @@
 const descriptionProduit = document.getElementById("description");
-const url = 'http://localhost:3000/api/cameras/';
+const url = "http://localhost:3000/api/cameras/";
 const parsedUrl = new URL(window.location.href);
 const urlProduit = parsedUrl.searchParams.get("id");
-console.log(urlProduit);
 async function getProduitsCamera() {
   try {
-  const response = await fetch(url + urlProduit);
-  //Si la réponse est différente de ok, on génére une exception
-  if(!response.ok) {
-    throw new Error(response.status);
-  } else {
-  const data = await response.json();
-  return data;
+    const response = await fetch(url + urlProduit);
+    //Si la réponse est différente de ok, on génére une exception
+    if(!response.ok) {
+      throw new Error(response.status);
+    } else {
+    const data = await response.json();
+    return data;
   }
 }catch (error) {
     console.error(error);
@@ -32,23 +31,19 @@ getProduitsCamera()
               </div>
         </div>`; 
        const select = document.getElementById("choix-objectifs");
-
       for(let i = 0; i < data.lenses.length; i++) {
           var opt = data.lenses[i];
           select.innerHTML += 
           "<option value=\"" + opt + "\">" + opt + "</option>" ;  
           }              
-
-      const ajouterProduit = document.getElementById('boutonAjouter');
-      ajouterProduit.addEventListener('click', function(event) {
+      const ajouterProduit = document.getElementById("boutonAjouter");
+      ajouterProduit.addEventListener("click", function(event) {
       //Récupération de la valeur rentrée dans l'input
-      var quantity = document.getElementById("nbProduits").value;
+      const quantity = document.getElementById("nbProduits").value;
       //Vérification nombre de caméras entre 1 et 10
-      if(quantity > 0 && quantity <= 10) {
-        console.log(quantity);
-        console.log(typeof quantity);
+      if(quantity > 0 && quantity <= 10) {        
       //On crée l'objet cameraProduit
-      let cameraProduit = {
+      const cameraProduit = {
         id: data._id,
         nom: data.name,
         image: data.imageUrl,
@@ -57,28 +52,24 @@ getProduitsCamera()
         lentilles: data.lenses,
         quantite: quantity,
       };
-      console.log(cameraProduit); 
        //Détection du support de localStorage
-       if(typeof localStorage!='undefined') {    
+       if(typeof localStorage!="undefined") {    
           //Récupération des données du localStorage
-            const monobjet_json = localStorage.getItem('produit');
+            const monobjet_json = localStorage.getItem("produit");
             let produit;
             //On vérifie si on a des donées dans le localStorage
             if(monobjet_json!=null) {
               window.alert("Produit ajouté au panier");
               //renvoie sous forme d'objet
-              produit = JSON.parse(monobjet_json);
-              console.log(produit);
+              produit = JSON.parse(monobjet_json);              
             } else {
               window.alert("Premier ajout au panier");
               //On initialise sous forme de tableau
-              produit = [];
-              console.log(produit);
+              produit = [];            
             }            
             produit.push(cameraProduit);
             //on transforme en chaine de texte et on stock dans localStorage         
-            localStorage.setItem('produit', JSON.stringify(produit));
-            console.log("stringify: " + produit); 
+            localStorage.setItem("produit", JSON.stringify(produit));             
           } else {
               window.alert("localStorage n'est pas supporté");
           }
