@@ -1,7 +1,6 @@
 const contenuOrder = JSON.parse(localStorage.getItem("orderFinal"));
 const textOrder = document.getElementById("resultatOrder");
-textOrder.innerHTML +=
-    `<h2>Récapitulatif de votre commande</h2>
+textOrder.innerHTML += `<h2>Récapitulatif de votre commande</h2>
     <div class="recapitulatif">
         <div class="identifiant">
             <p><strong>Identifiant de commande:</strong><br/>
