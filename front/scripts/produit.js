@@ -31,16 +31,18 @@ getProduitsCamera().then((data) => {
               <div class="choixOptions"></div>
               <div class="choixNbProduits">
                 <label for="nbProduits">Nombre de caméra(s)</label>
-                <input type="number" id="nbProduits" name="nbProduits" min="1" max="10">   
+                <input type="number" id="nbProduits" name="nbProduits"
+                min="1" max="10">   
               </div>
         </div>`;
   const select = document.getElementById("choix-objectifs");
+  //Affiche les choix de lentilles disponibles pour le produit
   for (let i = 0; i < data.lenses.length; i++) {
     var opt = data.lenses[i];
     select.innerHTML += '<option value="' + opt + '">' + opt + "</option>";
   }
   const ajouterProduit = document.getElementById("boutonAjouter");
-  ajouterProduit.addEventListener("click", function (event) {
+  ajouterProduit.addEventListener("click", function () {
     //Récupération de la valeur rentrée dans l'input
     const quantity = document.getElementById("nbProduits").value;
     //Vérification nombre de caméras entre 1 et 10

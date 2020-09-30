@@ -2,8 +2,6 @@ const contenuPanier = JSON.parse(localStorage.getItem("produit"));
 const produitPanier = document.getElementById("contenu-donnees");
 const finalCheck = document.getElementById("prix-total-final");
 const formul = document.getElementById("formulaire");
-const ajouterContact = document.getElementById("formulaire");
-const objet = localStorage.getItem("responseData");
 if (contenuPanier) {
   for (const panier of contenuPanier) {
     produitPanier.innerHTML += `
@@ -49,21 +47,25 @@ formul.innerHTML = `
                 <form id="formulaire-form">
                     <div class="prenom">
                         <label for="prenom">Prénom: </label>
-                        <input name="prenom" id="prenom" type="text" pattern="[A-Za-z-éè ]{1,25}"
+                        <input name="prenom" id="prenom" type="text"
+                        pattern="[A-Za-z-éè ]{2,25}"
                         title="Veuillez entrez des lettres et pas des nombres" required>
                     </div>
                     <div class="nom">
                         <label for="nom">Nom: </label>
-                        <input name="nom" id="nom" type="text" pattern="[A-Za-z-éè ]{1,25}"
+                        <input name="nom" id="nom" type="text"
+                        pattern="[A-Za-z-éè ]{2,25}"
                         title="Veuillez entrez des lettres et pas des nombres" required>
                     </div>
                     <div class="adresse">
                         <label for="adresse">Adresse: </label>
-                        <input name="adresse" id="adresse" type="text" pattern="[A-Za-z0-9- éè]{1,40}" required>
+                        <input name="adresse" id="adresse" type="text"
+                        pattern="[A-Za-z0-9- éè]{5,40}" required>
                     </div>
                     <div class="ville">
                         <label for="ville">Ville: </label>
-                        <input name="ville" id="ville" type="text" pattern="[A-Za-z-éè ]{1,25}"
+                        <input name="ville" id="ville" type="text"
+                        pattern="[A-Za-z-éè ]{1,25}"
                         title="Veuillez entrez des lettres et pas des nombres" required>
                     </div>
                     <div class="email">
@@ -74,10 +76,11 @@ formul.innerHTML = `
                         <input type="submit" value="Envoi commande">
                     </div>
                 </form>  
-                <button id="boutonInit">Init panier</button>
+                <button id="boutonInit">Suppression panier</button>
                 `;
 //On récupère les données du formulaire lors du click sur le bouton
-ajouterContact.addEventListener("submit", function (event) {
+formul.addEventListener("submit", function (event) {
+  //Pour eviter que le navigateur n'appelle l'événement par défaut
   event.preventDefault();
   const firstName = document.getElementById("prenom").value;
   const lastName = document.getElementById("nom").value;
@@ -116,7 +119,7 @@ ajouterContact.addEventListener("submit", function (event) {
   postContactProduct().then((responseData) => {
     //On vérifie le formulaire
     if (!form.checkValidity()) {
-      winndow.alert("Erreur de saisie");
+      window.alert("Erreur de saisie");
     } else {
       const productOrderId = responseData.orderId;
       const productOrderTotalCoast = reduced;
@@ -136,7 +139,10 @@ ajouterContact.addEventListener("submit", function (event) {
 });
 //Mise à zéro du panier
 const init = document.getElementById("boutonInit");
-init.addEventListener("click", function (e) {
-  localStorage.clear();
-  window.alert("Init panier, rafraichissez votre page");
+init.addEventListener("click", function () {
+  if (confirm("Êtes-vous sur de vouloir mettre à zéro votre panier")) {
+    localStorage.clear();
+    //Recharge la page
+    location.reload();
+  }
 });
