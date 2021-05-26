@@ -6,11 +6,11 @@ const path = require('path');
 const cameraRoutes = require('./routes/camera');
 const teddyRoutes = require('./routes/teddy');
 const furnitureRoutes = require('./routes/furniture');
-
+require('dotenv').config();
 const app = express();
 
-mongoose.connect(
-  'mongodb+srv://will:nAcmfCoHGDgzrCHG@cluster0-pme76.mongodb.net/test?retryWrites=true',
+mongoose.connect(process.env.MONGODB_URI,
+  
   { useNewUrlParser: true })
   .then(() => {
     console.log('Successfully connected to MongoDB Atlas!');
