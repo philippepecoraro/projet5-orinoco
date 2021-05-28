@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URI,
-  
+
   { useNewUrlParser: true })
   .then(() => {
     console.log('Successfully connected to MongoDB Atlas!');
@@ -28,6 +28,14 @@ app.use((req, res, next) => {
 });
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname + '/public/pages')));
+app.use(express.static(path.join(__dirname + '/public/css')));
+app.use(express.static(path.join(__dirname + '/public/scripts')));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 
 app.use(bodyParser.json());
 
