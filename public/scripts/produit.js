@@ -1,5 +1,5 @@
 const descriptionProduit = document.getElementById("description");
-const url = "http://localhost:3000/api/cameras/";
+const url = "https://node-orinoco.herokuapp.com/api/cameras/"
 const parsedUrl = new URL(window.location.href);
 const urlProduit = parsedUrl.searchParams.get("id");
 async function getProduitsCamera() {

@@ -97,10 +97,10 @@ formul.addEventListener("submit", function (event) {
   //On ajoute dans le tableau
   const products = contenuPanier.map((panier) => {
     return panier.id;
-  });
+  });                       
   async function postContactProduct() {
     try {
-      const response = await fetch("http://localhost:3000/api/cameras/order", {
+      const response = await fetch("https://node-orinoco.herokuapp.com/api/cameras/order", {
         method: "POST",
         body: JSON.stringify({ contact, products }),
         headers: new Headers({ "Content-Type": "application/json" }),
