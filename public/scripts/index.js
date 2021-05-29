@@ -1,5 +1,6 @@
 const objectApi = document.getElementById("listeProduits");
-const url = "http://localhost:3000/api/cameras";
+//const url = "http://localhost:3000/api/cameras";
+const url = "https://node-orinoco.herokuapp.com/api/cameras";
 async function getProduits() {
   try {
     const response = await fetch(url);
